@@ -1,11 +1,24 @@
 
+
 import streamlit as st
 import pandas as pd
-import openpyxl
 
 # Načtení datasetu
+df = pd.read_excel("prices.xlsx")
+df['Cena_2023'] = df['Cena_2023'].round(0).astype(int)
+df['Cena_2020'] = df['Cena_2023'].round(0).astype(int)
 
-df = pd.read_excel('https://github.com/ligasa/Prices_app/raw/master/prices.xlsx')
+# CSS styl pro změnu barvy pozadí
+st.markdown(
+    """
+    <style>
+    body {
+        background-color: #F6F6F6;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
 
 # Přidání nadpisu
 st.title("Dokážeš uhodnout průměrnou cenu zboží v březnu 2020?")
@@ -31,11 +44,12 @@ for index, row in df.iterrows():
     st.image(icons[row['potravina']], width=50)
     slider_val = st.slider(
         "Jaká byla cena zboží v roce 2020?",
-        min_value=row["Cena_2020"] * 0.3,
-        max_value=row["Cena_2020"] * 2.4,
-        value=row["Cena_2023"],
-        step=0.01,
-        key=row['potravina']
+        min_value = int(row["Cena_2020"] * 0.3),
+        max_value=int(row["Cena_2020"] * 2.4),
+        value=int(row["Cena_2023"]),
+        step=1,
+        key=row['potravina'],
+        format="%d Kč"
     )
     # Zvýraznění aktuální ceny na slideru
     st.write(f"Aktuální cena: {row['Cena_2023']} Kč")
@@ -54,4 +68,3 @@ for index, row in df.iterrows():
         else:
             rozdil = round(row["Cena_2020"] - slider_val, 2)
             st.write(f"Zadali jste cenu o {rozdil} Kč nižší než byla cena v roce 2020. Zboží tehdy stálo {row['Cena_2020']} Kč.")
-        
