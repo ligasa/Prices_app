@@ -3,6 +3,15 @@
 import streamlit as st
 import pandas as pd
 
+css = """
+body {
+  overscroll-behavior-y: contain;
+  touch-action: pan-y;
+}
+"""
+
+st.write(f'<style>{css}</style>', unsafe_allow_html=True)
+
 # Načtení datasetu
 df = pd.read_excel("prices.xlsx")
 df['Cena_2023'] = df['Cena_2023'].round(0).astype(int)
