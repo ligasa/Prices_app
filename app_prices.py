@@ -3,17 +3,6 @@
 import streamlit as st
 import pandas as pd
 
-# Odstranění scrolování
-hide_scrollbar_style = """
-            <style>
-            .main {
-                overflow: hidden;
-            }
-            </style>
-            """
-st.markdown(hide_scrollbar_style, unsafe_allow_html=True)
-
-
 # Načtení datasetu
 df = pd.read_excel("prices.xlsx")
 df['Cena_2023'] = df['Cena_2023'].round(0).astype(int)
