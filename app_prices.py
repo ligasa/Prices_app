@@ -3,15 +3,6 @@
 import streamlit as st
 import pandas as pd
 
-# vložte sem kód vaší Streamlit aplikace
-
-# Načtení datasetu
-df = pd.read_excel("prices.xlsx")
-df['Cena_2023'] = df['Cena_2023'].round(0).astype(int)
-df['Cena_2020'] = df['Cena_2020'].round(0).astype(int)
-
-st.markdown('<style>body {background-color: #F6F6F6;}</style>', unsafe_allow_html=True)
-
 # Přidání nadpisu
 st.title("Dokážete uhodnout průměrnou cenu zboží v březnu 2020?")
 
