@@ -3,26 +3,6 @@
 import streamlit as st
 import pandas as pd
 
-import streamlit as st
-
-st.markdown("""
-    <style>
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #888;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #555;
-        }
-    </style>
-""", unsafe_allow_html=True)
-
-
 # vložte sem kód vaší Streamlit aplikace
 
 # Načtení datasetu
