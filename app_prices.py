@@ -11,7 +11,7 @@ df['Cena_2020'] = df['Cena_2023'].round(0).astype(int)
 st.markdown('<style>body {background-color: #F6F6F6;}</style>', unsafe_allow_html=True)
 
 # Přidání nadpisu
-st.title("Dokážeš uhodnout průměrnou cenu zboží v březnu 2020?")
+st.title("Dokážete uhodnout průměrnou cenu zboží v březnu 2020?")
 
 icons = {
     "Chléb kmínový (1 kg)": "icons/bread.png",
