@@ -3,14 +3,16 @@
 import streamlit as st
 import pandas as pd
 
-css = """
-body {
-  overscroll-behavior-y: contain;
-  touch-action: pan-y;
-}
-"""
+# Odstranění scrolování
+hide_scrollbar_style = """
+            <style>
+            .main {
+                overflow: hidden;
+            }
+            </style>
+            """
+st.markdown(hide_scrollbar_style, unsafe_allow_html=True)
 
-st.write(f'<style>{css}</style>', unsafe_allow_html=True)
 
 # Načtení datasetu
 df = pd.read_excel("prices.xlsx")
