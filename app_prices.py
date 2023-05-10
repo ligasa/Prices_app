@@ -7,18 +7,21 @@ import streamlit as st
 
 st.markdown("""
     <style>
-        /* nastavení overflow pro celou stránku */
-        html {
-            overflow: auto;
-            -webkit-overflow-scrolling: touch;
+        ::-webkit-scrollbar {
+            width: 8px;
         }
-
-        /* zrušení overflow pro vaši aplikaci */
-        .streamlit-embed-wrapper {
-            overflow: visible;
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
         }
     </style>
 """, unsafe_allow_html=True)
+
 
 # vložte sem kód vaší Streamlit aplikace
 
