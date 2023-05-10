@@ -3,6 +3,10 @@
 import streamlit as st
 import pandas as pd
 
+# Načtení datasetu
+
+df = pd.read_excel('https://github.com/ligasa/Prices_app/raw/master/prices.xlsx')
+
 # Přidání nadpisu
 st.title("Dokážete uhodnout průměrnou cenu zboží v březnu 2020?")
 
