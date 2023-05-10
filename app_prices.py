@@ -58,3 +58,7 @@ for index, row in df.iterrows():
         else:
             rozdil = round(row["Cena_2020"] - slider_val, 2)
             st.write(f"Zadali jste cenu o {rozdil} Kč nižší než byla cena v roce 2020. Zboží tehdy stálo {row['Cena_2020']} Kč.")
+ 
+# Přidání informací o autorovi a zdroji dat
+st.markdown('')
+st.markdown("""<div style="text-align: right">Autor: Aleš Ligas | Zdroj: Český statistický úřad</div>""", unsafe_allow_html=True)
