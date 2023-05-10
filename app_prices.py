@@ -3,6 +3,25 @@
 import streamlit as st
 import pandas as pd
 
+import streamlit as st
+
+st.markdown("""
+    <style>
+        /* nastavení overflow pro celou stránku */
+        html {
+            overflow: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        /* zrušení overflow pro vaši aplikaci */
+        .streamlit-embed-wrapper {
+            overflow: visible;
+        }
+    </style>
+""", unsafe_allow_html=True)
+
+# vložte sem kód vaší Streamlit aplikace
+
 # Načtení datasetu
 df = pd.read_excel("prices.xlsx")
 df['Cena_2023'] = df['Cena_2023'].round(0).astype(int)
