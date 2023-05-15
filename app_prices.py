@@ -8,7 +8,7 @@ import pandas as pd
 df = pd.read_excel('https://github.com/ligasa/Prices_app/raw/master/prices.xlsx')
 
 # Přidání nadpisu
-st.title("Dokážete uhodnout průměrnou cenu zboží v březnu 2020?")
+st.title("Dokážeš uhodnout průměrnou cenu zboží v březnu 2020?")
 
 icons = {
     "Chléb kmínový (1 kg)": "icons/bread.png",
@@ -58,5 +58,7 @@ for index, row in df.iterrows():
 
 # Přidání informací o autorovi a zdroji dat
 st.markdown('')
-st.markdown('<div style="text-align: center">Autor: Aleš Ligas | Zdroj: ČSÚ</div>', unsafe_allow_html=True)
+st.markdown("""<div style="text-align: center">Autor: Aleš Ligas | Zdroj: ČSÚ</div>""", unsafe_allow_html=True)
+
+
 
