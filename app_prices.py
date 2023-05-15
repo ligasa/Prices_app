@@ -58,4 +58,5 @@ for index, row in df.iterrows():
  
 # Přidání informací o autorovi a zdroji dat
 st.markdown('')
-st.markdown("""<div style="text-align: middle">Autor: Aleš Ligas | Zdroj: ČSÚ</div>""", unsafe_allow_html=True)
+st.markdown('<div style="text-align: center">Autor: Aleš Ligas | Zdroj: ČSÚ</div>', unsafe_allow_html=True)
+
