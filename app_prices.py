@@ -48,14 +48,14 @@ for index, row in df.iterrows():
         # Porovnání cen a výpis výsledků
         st.write("### Výsledek:")
         if slider_val == row["Cena_2020"]:
-            st.write(f"Uhodli jste cenu! Cena byla {row['Cena_2020']} Kč.")
+            st.markdown(f'<div style="border: 1px solid red; padding: 10px; color: red; border-radius: 5px;">Uhodli jste cenu! Cena byla {row["Cena_2020"]} Kč.</div>', unsafe_allow_html=True)
         elif slider_val > row["Cena_2020"]:
             rozdil = round(slider_val - row["Cena_2020"], 2)
-            st.write(f"Zadali jste cenu o {rozdil} Kč vyšší než byla cena v roce 2020. Zboží tehdy stálo {row['Cena_2020']} Kč.")
+            st.markdown(f'<div style="border: 1px solid red; padding: 10px; color: red; border-radius: 5px;">Zadali jste cenu o {rozdil} Kč vyšší než byla cena v roce 2020. Zboží tehdy stálo {row["Cena_2020"]} Kč.</div>', unsafe_allow_html=True)
         else:
             rozdil = round(row["Cena_2020"] - slider_val, 2)
-            st.write(f"Zadali jste cenu o {rozdil} Kč nižší než byla cena v roce 2020. Zboží tehdy stálo {row['Cena_2020']} Kč.")
- 
+            st.markdown(f'<div style="border: 1px solid red; padding: 10px; color: red; border-radius: 5px;">Zadali jste cenu o {rozdil} Kč nižší než byla cena v roce 2020. Zboží tehdy stálo {row["Cena_2020"]} Kč.</div>', unsafe_allow_html=True)
+
 # Přidání informací o autorovi a zdroji dat
 st.markdown('')
 st.markdown('<div style="text-align: center">Autor: Aleš Ligas | Zdroj: ČSÚ</div>', unsafe_allow_html=True)
