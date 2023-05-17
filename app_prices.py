@@ -52,11 +52,13 @@ for index, row in df.iterrows():
         st.write("### Výsledek:")
         if slider_val == row["Cena_2020"]:
             st.markdown(f'<div style="border: 1px solid red; padding: 10px; color: red; border-radius: 5px;">Uhodli jste cenu! Cena byla {row["Cena_2020"]} Kč.</div>', unsafe_allow_html=True)
+        elif abs(slider_val - row["Cena_2020"]) == 1:
+            st.markdown(f'<div style="border: 1px solid red; padding: 10px; color: red; border-radius: 5px;">Těsně vedle! Cena byla {row["Cena_2020"]} Kč.</div>', unsafe_allow_html=True)
         elif slider_val > row["Cena_2020"]:
-            rozdil = round(slider_val - row["Cena_2020"], 0)
+            rozdil = round(slider_val - row["Cena_2020"], 2)
             st.markdown(f'<div style="border: 1px solid red; padding: 10px; color: red; border-radius: 5px;">Zadali jste cenu o {rozdil} Kč vyšší než byla cena v roce 2020. Zboží tehdy stálo {row["Cena_2020"]} Kč.</div>', unsafe_allow_html=True)
         else:
-            rozdil = round(row["Cena_2020"] - slider_val, 0)
+            rozdil = round(row["Cena_2020"] - slider_val, 2)
             st.markdown(f'<div style="border: 1px solid red; padding: 10px; color: red; border-radius: 5px;">Zadali jste cenu o {rozdil} Kč nižší než byla cena v roce 2020. Zboží tehdy stálo {row["Cena_2020"]} Kč.</div>', unsafe_allow_html=True)
 
 # Přidání informací o autorovi a zdroji dat
