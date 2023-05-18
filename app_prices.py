@@ -11,7 +11,7 @@ df['Cena_2023'] = df['Cena_2023'].round(0).astype(int)
 df['Cena_2020'] = df['Cena_2020'].round(0).astype(int)
 
 # Přidání nadpisu
-st.title("Dokážeš uhodnout průměrnou cenu zboží v březnu 2020?")
+st.title("Dokážete uhodnout průměrnou cenu zboží v březnu 2020?")
 
 icons = {
     "Chléb kmínový (1 kg)": "icons/bread.png",
